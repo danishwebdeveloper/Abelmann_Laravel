@@ -29,6 +29,10 @@
                min="1950-01-01"
                max="2050-12-31">
     </div>
+
+    @if($errors->any())
+    {!! implode('', $errors->all("<div class='alert alert-danger'>:message</div>")) !!}
+    @endif
     <input type="submit" name="changeDate" id="changeDate" value="Submit" class="btn btn-success">
 </div>
 </form>
