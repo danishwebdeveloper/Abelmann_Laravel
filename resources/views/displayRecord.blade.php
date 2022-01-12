@@ -10,6 +10,11 @@
             {{ session('status') }}
         </div>
     @endif
+    @if(session('failstatus'))
+        <div class="alert alert-danger">
+        {{ session('failstatus') }}
+    </div>
+    @endif
 </div>
 {{--  Body  --}}
 <div class="panel-body">

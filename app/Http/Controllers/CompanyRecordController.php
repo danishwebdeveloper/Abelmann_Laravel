@@ -70,7 +70,7 @@ class CompanyRecordController extends Controller
         $request->session()->flash('status', 'Results Found!');
     return view('displayRecord', compact('data'));
     }else{
-        $request->session()->flash('status', 'No Result Found!');
+        $request->session()->flash('failstatus', 'No Result Found!');
         return view('displayRecord', compact('data'));
         }
     }

@@ -23,7 +23,7 @@ class ProjektTableSeeder extends Seeder
             return;
         }
 
-        $projectsCount = (int)$this->command->ask('How many comments would you like?', 500);  //Ask how many Project you want to Create
+        $projectsCount = (int)$this->command->ask('How many Projects would you like?', 500);  //Ask how many Project you want to Create
 
         // Project Created
         \App\Models\Projekt::factory($projectsCount)->make()->each(function($projekt) use ($firmas){
