@@ -45,7 +45,7 @@ class CompanyRecordController extends Controller
         // Validations
         $validator = Validator::make($request->all(),
         [
-          'project_start'=> 'required|date',
+          'project_start'=> 'required|date|before:project_end',
           'project_end'=> 'required|date|after_or_equal:project_start'
         ]
     );
