@@ -58,8 +58,8 @@ class CompanyRecordController extends Controller
     $enddate = $request->input('project_end');
 
     // Query
-    $data = Projekt::where('start', '<=', $startdate)
-    ->where('end', '>=', $enddate)
+    $data = Projekt::where('start', '<=', $enddate)
+    ->where('end', '>=', $startdate)
     ->where(function($query){
             return $query->where('status', '=', 1);
         })->get();

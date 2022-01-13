@@ -16,9 +16,10 @@ class ProjektFactory extends Factory
     {
         return [
             // Initialize all Projekt faker attributes that are in Projekt datbase
+            // $startdate = $this->faker->dateTimeBetween('1950 years', '+100 years'),
             'name' => $this->faker->name(),
-            'start' => $this->faker->date(),
-            'end' => $this->faker->date(),
+            'start' => $this->faker->dateTimeBetween('this week', '+2 years'),
+            'end' => $this->faker->dateTimeBetween('this week', '+6 years'),
             'budget' => $this->faker->numberBetween(2000, 1000000),
             'status' => $this->faker->numberBetween(0,1),
         ];

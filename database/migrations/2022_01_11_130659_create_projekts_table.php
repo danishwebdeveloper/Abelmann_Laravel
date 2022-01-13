@@ -17,9 +17,9 @@ class CreateProjektsTable extends Migration
             $table->id();
             $table->unsignedInteger('firma_id')->nullable()->index();
             $table->string('name');
-            $table->string('start');
-            $table->time('end');
-            $table->time('budget');
+            $table->date('start');
+            $table->date('end');
+            $table->string('budget');
             $table->boolean('status')->default(false);
             $table->timestamps();
         });
