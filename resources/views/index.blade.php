@@ -3,7 +3,6 @@
 
 {{-- Body --}}
 @section('content')
-
   <div class="container">
     <div class="row">
 
@@ -13,7 +12,7 @@
         <!-- Form -->
         <div class="form-group disp">
             <h5>Upload File in Laravel using AJAX</h3>
-           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Select File    <span class="required">*</span></label>
+           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Select File  <span class="required">*</span></label>
            <div class="col-md-6 col-sm-6 col-xs-12">
               <input type='file' id="file" name='file' class="form-control">
               <!-- Error -->
@@ -32,6 +31,7 @@
   <!-- Script -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
+
   var CSRF_TOKEN = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
 
   $(document).ready(function(){
@@ -44,7 +44,7 @@
       if(files.length > 0){
          var fd = new FormData();
 
-         // Append data
+         // Append data - file and csrf token
          fd.append('file',files[0]);
          fd.append('_token',CSRF_TOKEN);
 
@@ -60,6 +60,7 @@
            contentType: false,
            processData: false,
            dataType: 'json',
+        //  Came from controller
            success: function(response){
 
              // Hide error container

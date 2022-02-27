@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\UploadImageController;
 use App\Http\Controllers\CompanyRecordController;
+use App\Models\Applicant;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +24,9 @@ Route::post('/uploadFile', [UploadImageController::class, 'uploadFile'])->name('
 
 // Resource Controller of Record
 Route::resource('/record', CompanyRecordController::class);
+
+Route::resource('/applicants', ApplicantController::class);
+
+Auth::routes();
 
 
